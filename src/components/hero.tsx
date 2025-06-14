@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Download, Mail, MapPin, Code } from "lucide-react";
 import { FaNode } from "react-icons/fa";
+import { AuroraText } from "@/components/magicui/aurora-text";
 import {
   RiNextjsFill,
   RiReactjsFill,
@@ -25,7 +26,7 @@ export default function Hero() {
         >
           <div className="space-y-2">
             <h1 className="text-3xl sm:text-4xl  bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-700 font-bold">
-              Devaansh Dubey
+              <AuroraText>Devaansh Dubey</AuroraText>
             </h1>
             <p className="text-lg sm:text-xl text-muted-foreground">
               Software Engineer

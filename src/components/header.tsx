@@ -6,6 +6,7 @@ import { useTheme } from "next-themes"
 import { Moon, Sun, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { motion, AnimatePresence } from "framer-motion"
+import { AuroraText } from "@/components/magicui/aurora-text";
 
 const navItems = [
   { name: "About", href: "#" },
