@@ -16,7 +16,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="py-6 md:py-10">
+    <section className="py-3 md-10">
       <div className="grid md:grid-cols-3 gap-10 items-center max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

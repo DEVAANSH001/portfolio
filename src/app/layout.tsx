@@ -7,6 +7,7 @@ import Header from "@/components/header"
 import { Suspense } from "react"
 import Loading from "@/components/loading"
 import { SmoothCursor } from "@/components/ui/smooth-cursor";
+// import LandingAnimation from "@/components/LandingAnimation";
 import { ScrollProgress } from "@/components/magicui/scroll-progress";
 const inter = Inter({ subsets: ["latin"] })
 
@@ -31,13 +32,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
+        {/* <LandingAnimation /> */}
         <SmoothCursor />
         <ScrollProgress />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <Suspense fallback={<Loading />}>
           
             <Header />
-            <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">{children}</main>
+            <main className="max-w-4x1 mx-auto px-4 sm:px-6 lg:px-8">{children}</main>
             <footer className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-sm text-muted-foreground">
               © {new Date().getFullYear()} Devaansh. All rights reserved.
             </footer>
