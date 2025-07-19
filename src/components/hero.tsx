@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Download, Mail, MapPin, Code } from "lucide-react";
 import { FaNode } from "react-icons/fa";
@@ -13,8 +13,20 @@ import {
 } from "react-icons/ri";
 import { SiMongodb } from "react-icons/si";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function Hero() {
+  
+  const roles = ["Software Developer", "Web Designer", "Backend Engineer", "AI Engineer"];
+  const [roleIndex, setRoleIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRoleIndex((prev) => (prev + 1) % roles.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="py-3 md-10">
       <div className="grid md:grid-cols-3 gap-10 items-center max-w-6xl mx-auto">
@@ -25,12 +37,25 @@ export default function Hero() {
           className="space-y-6 md:col-span-2"
         >
           <div className="space-y-2">
-            <h1 className="text-3xl sm:text-4xl  bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-700 font-bold">
+            <h1 className="text-3xl sm:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-700 font-bold">
               <AuroraText>Devaansh Dubey</AuroraText>
             </h1>
-            <p className="text-lg sm:text-xl text-muted-foreground">
-              Software Engineer
-            </p>
+
+            {/* ✅ Animated Roles */}
+            <div className="h-6 sm:h-8 overflow-hidden">
+  <AnimatePresence mode="wait">
+    <motion.p
+      key={roles[roleIndex]}
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -10 }}
+      transition={{ duration: 0.6 }}
+      className="text-lg sm:text-xl text-muted-foreground"
+    >
+      {roles[roleIndex]}
+    </motion.p>
+  </AnimatePresence>
+</div>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 text-sm text-muted-foreground">
@@ -55,7 +80,7 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-wrap gap-2 sm:gap-3">
-            <Link href="" target="_blank" download>
+            <Link  href="/RESUME.pdf" target="_blank" download>
               <Button
                 size="sm"
                 className="text-xs sm:text-sm bg-blue-600 hover:bg-purple-600 text-white rounded-full px-4 py-2 transition-colors duration-500"
