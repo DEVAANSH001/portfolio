@@ -16,24 +16,9 @@ const EXPERIENCE = [
      "Next.js 15",
       "Firebase Authentication",
       "TailwindCSS",
-      "Frontend Redesign",
-      "College Email Login",
+      "Frontend ",
       "Google Maps API",
       "Ride Booking Integration", 
-    ],
-  },
-  {
-    role: "Data Analytics Intern",
-    company: "Imarticus Learning",
-    period: "June 2025 – Present",
-    description:
-      "Currently engaged in an intensive internship focused on applied data science and analytics methodologies. Gaining hands-on experience with SQL, Python, Power BI, and Tableau through real-world projects such as banking customer behavior analysis, pizza sales intelligence, and delivery performance dashboards. ",
-    skills: [
-      "SQL",
-      "Python",
-      "Power BI",
-      "Tableau",
-      "Exploratory Data Analysis",
     ],
   },
   {
@@ -41,14 +26,28 @@ const EXPERIENCE = [
     company: "Zonomo",
     period: "May 15, 2025 – June 15, 2025",
     description:
-      "Led backend development of Zonomo’s AI-first voice appointment system leveraging Vapi's agentic voice capabilities. Integrated voice-to-voice conversational flows directly into the core platform, enabling users to seamlessly book and manage appointments. Additionally implemented a secure payment processing pipeline via Stripe, enhancing transactional reliability and improving user conversion flow across the product lifecycle.",
+    "build AI-first voice appointment system leveraging Vapi's agentic voice capabilities. Integrated voice-to-voice conversational flows directly into the core platform, enabling users to seamlessly book and manage appointments. Additionally implemented a secure payment processing pipeline via razerpay, enhancing transactional reliability and improving user conversion flow across the product lifecycle.",
     skills: [
       "Node.js",
       "Vapi AI Integration",
       "Voice AI",
       "Stripe Payment Gateway",
       "Appointment Scheduling Systems",
-      "Conversational UX",
+      
+    ],
+  },
+  {
+    role: "Data Analytics Intern",
+    company: "Imarticus Learning",
+    period: "June 2025 – july 2025 ",
+    description:
+      'Gaining hands-on experience with SQL, Python, Power-BI, and Tableau through real-world projects such as banking customer behavior analysis, pizza sales intelligence, and delivery performance dashboards.',
+    skills: [
+      "SQL",
+      "Python",
+      "Power BI",
+      "Tableau",
+      "Exploratory Data Analysis",
     ],
   },
 ];
