@@ -27,7 +27,7 @@ export default function Footer() {
     return () => clearInterval(timer);
   }, []);
 
-  // Random inspirational quotes for developers
+  
   const quotes = [
     "Code is poetry written for machines and read by humans.",
     "The best code is no code at all.",
@@ -36,7 +36,7 @@ export default function Footer() {
     "Make it work, make it right, make it fast.",
   ];
 
-  // Use a more stable way to select a quote to prevent flickering
+
   const [randomQuote, setRandomQuote] = useState("");
 
   useEffect(() => {
@@ -47,7 +47,7 @@ export default function Footer() {
 
   return (
     <footer className="relative overflow-hidden border-t bg-background/80 backdrop-blur-sm">
-      {/* Decorative elements */}
+      
       <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:20px_20px]" />
 <div className="absolute left-1/2 top-0 h-[1px] w-1/2 bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
 
@@ -86,7 +86,7 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Middle column - Social links with hover animation */}
+      
           <div className="flex flex-col items-center justify-center">
             <div className="flex space-x-1">
               {[

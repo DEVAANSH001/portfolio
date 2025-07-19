@@ -1,5 +1,5 @@
 {
-  "name": "portfolio",
+  "name": "devaansh_porfolio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -35,6 +35,8 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
+    "devaansh_po": "file:",
+    "devaansh_porfolio": "file:",
     "embla-carousel-react": "^8.6.0",
     "framer-motion": "^12.18.1",
     "input-otp": "^1.4.2",
@@ -51,7 +53,8 @@
     "react-resizable-panels": "^3.0.3",
     "recharts": "^2.15.4",
     "sonner": "^2.0.5",
-    "tailwind-merge": "^3.3.1"
+    "tailwind-merge": "^3.3.1",
+    "tailwind-scrollbar-hide": "^4.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
