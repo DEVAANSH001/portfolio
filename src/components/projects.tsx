@@ -1,0 +1,205 @@
+"use client";
+
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Github, ExternalLink } from "lucide-react";
+import Link from "next/link";
+import { BsArrowRight } from "react-icons/bs";
+import { AuroraText } from "@/components/magicui/aurora-text";
+
+const projects = [
+  {
+    logo: "/matchwize.svg",
+    title: "Matchwize",
+    description:
+      "matchwize analyzes your resume against job descriptions to give you a match score and actionable suggestions to improve your chances.",
+    image: "/matchwize.png",
+    tags: [
+      "Next.js",
+      "Node.js",
+      "Express.js",
+      "Supabase",
+      "Tailwind CSS",
+      "Gemini API",
+    ],
+    demoUrl: "https://matchwize.com/",
+    githubUrl: "",
+    features: [
+      "Gemini API integration for resume analysis",
+      "Supabase for data storage",
+    ],
+  },
+  {
+  logo: "/inview.png",
+  title: "InView AI",
+  description:
+    "A voice-based AI interview platform where users upload their resume and participate in mock interviews powered by Vapi AI.",
+  image: "/inview.png",
+  tags: ["Next.js", "React", "Tailwind CSS", "Firebase", "Vercel", "Vapi AI"],
+  demoUrl: "https://inview-ai.vercel.app/", 
+  githubUrl: "https://github.com/DEVAANSH001/inview_ai", 
+  
+  features: [
+    "Resume upload with real-time parsing",
+    "Voice-to-voice mock interviews using Vapi AI",
+    "Dynamic feedback and scoring",
+    "Firebase for authentication and data storage",
+    "Deployed on Vercel with responsive design",
+  ],
+},
+{
+  logo: "/heart2.png",
+  title: "Heart Disease Prediction",
+  description:
+    "A machine learning-based web app to predict heart disease using multiple models, visual comparison, and final deployment with Random Forest.",
+  image: "/heart2.png",
+  tags: ["Python", "Streamlit", "Scikit-learn", "Matplotlib", "Pandas"],
+  demoUrl: "https://devaansh001-heart-disease-p-heart-disease-prediction-app-iqot7p.streamlit.app/",
+  githubUrl: "https://github.com/DEVAANSH001/heart_disease_prediction-model", 
+  features: [
+    "Model comparison: KNN, SVM, Naive Bayes, Decision Tree, Linear & Random Forest",
+    "Evaluation metrics: R², specificity, accuracy, F1 score",
+    "Final model (Random Forest) deployed with 95% accuracy",
+    "Interactive UI using Streamlit",
+    "Visualization of model performance and predictions",
+  ],
+}
+ 
+];
+export default function Projects() {
+  return (
+    <section id="projects" className="py-10">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+      
+        <div>
+          <motion.span
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            className="text-sm font-semibold uppercase tracking-wider text-primary mb-2  relative inline-block"
+          >
+            Featured Work
+            <motion.span
+              initial={{ width: 0 }}
+              whileInView={{ width: "100%" }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-primary/60 to-purple-600/60 rounded-full"
+            />
+          </motion.span>
+          <motion.h2
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.4 }}
+            className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary/70 via-purple-500 to-purple-800"
+          >
+            <AuroraText>Recent Projects</AuroraText>
+          </motion.h2>
+        </div>
+
+        {/* Projects List */}
+        <div className="grid gap-10 mt-10">
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="grid md:grid-cols-2 gap-6 border rounded-xl overflow-hidden group"
+            >
+              <div className="overflow-hidden relative h-[300px] md:h-full border-b md:border-b-0 md:border-r">
+                <div className="absolute inset-0 overflow-y-auto [&::-webkit-scrollbar]:hidden scrollbar-thin scrollbar-thumb-transparent">
+                  <Image
+                    src={project.image || "/placeholder.svg"}
+                    alt={project.title}
+                    width={800}
+                    height={1200}
+                    className="w-full object-contain transition-transform duration-300 group-hover:scale-101"
+                  />
+                </div>
+              </div>
+
+              <div className="p-6 space-y-4">
+                <h3 className="text-xl font-bold">{project.title}</h3>
+                <p className="text-muted-foreground">{project.description}</p>
+
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag, idx) => (
+                    <Badge key={idx} variant="secondary">
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+
+                <div className="space-y-2">
+                  <h4 className="font-semibold">Key Features:</h4>
+                  <ul className="list-disc pl-5 space-y-1">
+                    {project.features.map((feature, idx) => (
+                      <li key={idx} className="text-sm">
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="flex gap-3 pt-2">
+                  <Button size="sm">
+                    <Link
+                      href={project.demoUrl}
+                      className="flex items-center"
+                      target="_blank"
+                    >
+                      <ExternalLink className="mr-2 h-4 w-4" /> Live
+                    </Link>
+                  </Button>
+                  {project.githubUrl && (
+                    <Button size="sm" variant="outline">
+                      <Link
+                        href={project.githubUrl}
+                        className="flex items-center"
+                        target="_blank"
+                      >
+                        <Github className="mr-2 h-4 w-4" /> Code
+                      </Link>
+                    </Button>
+                  )}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* View All */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2, duration: 0.4 }}
+          className="mt-10 text-center"
+        >
+          {/* <Link href="/projects">
+            <motion.button
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              className="px-6 py-2.5 rounded-lg text-sm font-medium bg-primary/10 text-primary 
+                hover:bg-primary/20 transition-all duration-300 border border-primary/10 
+                hover:border-primary/30 shadow-sm hover:shadow-md flex items-center gap-2 mx-auto"
+            >
+              View All Projects <BsArrowRight />
+            </motion.button>
+          </Link> */}
+        </motion.div>
+      </motion.div>
+    </section>
+  );
+}
