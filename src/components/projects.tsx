@@ -24,7 +24,7 @@ const projects = [
       "Tailwind CSS",
       "Gemini API",
     ],
-    demoUrl: "https://matchwize.com/",
+    demoUrl: "",
     githubUrl: "",
     features: [
       "Gemini API integration for resume analysis",
