@@ -91,15 +91,15 @@ export default function SkillsSection() {
     <section id="skills" className="w-full py-12">
       <div className="container px-4">
         <motion.div
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          variants={containerVariants}
-          className="max-w-5xl mx-auto"
-        >
-          <h2 className="text-3xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary/70 via-purple-500 to-purple-800 py-7 text-center">
-            <AuroraText>Skills & Technologies</AuroraText>
-          </h2>
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        variants={containerVariants}
+        className="max-w-5xl mx-auto"
+      >
+        <h2 className="text-3xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary/70 via-purple-500 to-purple-800 py-7 text-left">
+          <AuroraText>Skills & Technologies</AuroraText>
+        </h2>
 
           {/* Skills Grid */}
           <motion.div
