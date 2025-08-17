@@ -1,7 +1,6 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-
 import { AuroraText } from "@/components/magicui/aurora-text";
 import {
   FaBrain, FaCode, FaDatabase
@@ -20,7 +19,7 @@ const SKILLS = [
   { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
   { name: "Python", icon: SiPython, color: "#3776AB" },
   { name: "React", icon: SiReact, color: "#61DAFB" },
-  { name: "Next.js", icon: SiNextdotjs, color: "inherit" }, 
+  { name: "Next.js", icon: SiNextdotjs, color: "inherit", hoverColor: "#000000" }, 
   { name: "Node.js", icon: SiNodedotjs, color: "#539E43" },
   { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
   { name: "TensorFlow", icon: SiTensorflow, color: "#FF6F00" },
@@ -32,7 +31,7 @@ const SKILLS = [
   { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
   { name: "Google Cloud", icon: SiGooglecloud, color: "#4285F4" },
   { name: "AWS", icon: SiAmazon, color: "#FF9900" },
-  { name: "Vercel", icon: SiVercel, color: "inherit" },
+  { name: "Vercel", icon: SiVercel, color: "inherit", hoverColor: "#000000" },
   { name: "Docker", icon: SiDocker, color: "#2496ED" },
   { name: "FastAPI", icon: SiFastapi, color: "#009688" },
   { name: "Diffusion", icon: BsLightningChargeFill, color: "#9333EA" },
@@ -53,12 +52,13 @@ const cardVariants: Variants = {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { type: "spring" as const, stiffness: 80, damping: 15 },
+    transition: { type: "spring", stiffness: 80, damping: 15 },
   },
 };
 
 const SkillCard = React.memo(({ skill }: { skill: typeof SKILLS[0] }) => {
   const IconComponent = skill.icon;
+
   return (
     <motion.div
       variants={cardVariants}
@@ -71,14 +71,20 @@ const SkillCard = React.memo(({ skill }: { skill: typeof SKILLS[0] }) => {
     >
       <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-background border group-hover:border-primary/50">
         <IconComponent
-          className="w-8 h-8"
-          style={{ color: skill.color !== "inherit" ? skill.color : undefined }}
+          className="w-8 h-8 transition-colors duration-300"
+          style={{
+            color:
+              skill.color !== "inherit"
+                ? skill.color
+                : undefined,
+          }}
         />
       </div>
       <h3 className="text-lg font-semibold text-center">{skill.name}</h3>
     </motion.div>
   );
 });
+SkillCard.displayName = "SkillCard";
 
 export default function SkillsSection() {
   return (

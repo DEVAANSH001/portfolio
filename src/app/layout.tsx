@@ -7,6 +7,7 @@ import Header from "@/components/header"
 import { Suspense } from "react"
 import Loading from "@/components/loading"
 import { SmoothCursor } from "@/components/ui/smooth-cursor";
+import { Analytics } from "@vercel/analytics/next"
 // import LandingAnimation from "@/components/LandingAnimation";
 import { ScrollProgress } from "@/components/magicui/scroll-progress";
 const inter = Inter({ subsets: ["latin"] })
@@ -34,6 +35,7 @@ export default function RootLayout({
       <body className={inter.className}>
         {/* <LandingAnimation /> */}
         <SmoothCursor />
+        <Analytics/>
         <ScrollProgress />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <Suspense fallback={<Loading />}>
