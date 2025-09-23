@@ -7,7 +7,6 @@ body, * {
   cursor: none !important;
 }
 
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -178,5 +177,9 @@ body, * {
   scrollbar-color: rgba(150,150,150,0.4) transparent;
 }
 
-
 /*text-3xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-white to-purple-600"*/
+
+::view-transition-old(root), ::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+}

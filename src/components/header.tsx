@@ -6,6 +6,7 @@ import { useTheme } from "next-themes"
 import { Moon, Sun, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { motion, AnimatePresence } from "framer-motion"
+import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import { AuroraText } from "@/components/magicui/aurora-text";
 
 const navItems = [
@@ -80,27 +81,14 @@ export default function Header() {
                 {item.name}
               </Link>
             ))}
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-              aria-label="Toggle theme"
-            >
-              {resolvedTheme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-            </Button>
+            
+              
+            <AnimatedThemeToggler/>
           </nav>
 
-          {/* Mobile Navigation Toggle */}
+     
           <div className="flex md:hidden">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-              aria-label="Toggle theme"
-              className="mr-2"
-            >
-              {resolvedTheme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-            </Button>
+            <AnimatedThemeToggler/>
             <Button
               variant="ghost"
               size="icon"
