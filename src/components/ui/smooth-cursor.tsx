@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useSpring } from "framer-motion"; 
+import { motion, useSpring } from "framer-motion";
 import { FC, JSX, useEffect, useRef, useState } from "react";
 
 interface Position {
@@ -89,6 +89,9 @@ export function SmoothCursor({
     restDelta: 0.001,
   },
 }: SmoothCursorProps) {
+  
+  const [isVisible, setIsVisible] = useState(false);
+
   const [isMoving, setIsMoving] = useState(false);
   const lastMousePos = useRef<Position>({ x: 0, y: 0 });
   const velocity = useRef<Position>({ x: 0, y: 0 });
@@ -109,7 +112,30 @@ export function SmoothCursor({
     damping: 35,
   });
 
+  
   useEffect(() => {
+   
+    const mediaQuery = window.matchMedia("(pointer: fine)");
+
+    const handleDeviceChange = (e: MediaQueryListEvent) => {
+      setIsVisible(e.matches);
+    };
+
+ 
+    setIsVisible(mediaQuery.matches);
+
+
+    mediaQuery.addEventListener("change", handleDeviceChange);
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleDeviceChange);
+    };
+  }, []);
+
+  useEffect(() => {
+    // listeners if we are on a desktop device
+    if (!isVisible) return; 
+
     const updateVelocity = (currentPos: Position) => {
       const currentTime = Date.now();
       const deltaTime = currentTime - lastUpdateTime.current;
@@ -178,7 +204,10 @@ export function SmoothCursor({
       document.body.style.cursor = "auto";
       if (rafId) cancelAnimationFrame(rafId);
     };
-  }, [cursorX, cursorY, rotation, scale]);
+  }, [cursorX, cursorY, rotation, scale, isVisible]);
+
+
+  if (!isVisible) return null;
 
   return (
     <motion.div
