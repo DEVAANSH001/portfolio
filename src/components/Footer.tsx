@@ -27,23 +27,12 @@ export default function Footer() {
     return () => clearInterval(timer);
   }, []);
 
-  
-  const quotes = [
-    "Code is poetry written for machines and read by humans.",
-    "The best code is no code at all.",
-    "First solve the problem, then write the code.",
-    "Simplicity is the ultimate sophistication.",
-    "Make it work, make it right, make it fast.",
-  ];
+
 
 
   const [randomQuote, setRandomQuote] = useState("");
 
-  useEffect(() => {
-    // Set the quote once on component mount
-    const quoteIndex = Math.floor(Math.random() * quotes.length);
-    setRandomQuote(quotes[quoteIndex]);
-  }, []);
+
 
   return (
     <footer className="relative overflow-hidden border-t bg-background/80 backdrop-blur-sm">
@@ -76,14 +65,7 @@ export default function Footer() {
         </div>
       </div>
 
-            <p className="text-sm text-muted-foreground">
-              Currently{" "}
-              {new Date().getHours() >= 24 || new Date().getHours() < 6
-                ? "sleeping 😴"
-                : new Date().getHours() < 9
-                ? "having coffee ☕"
-                : "coding 💻"}
-            </p>
+            
           </div>
 
       
@@ -119,9 +101,7 @@ export default function Footer() {
                 </a>
               ))}
             </div>
-            <p className="mt-6 max-w-xs text-center text-sm font-light italic text-muted-foreground">
-              "{randomQuote}"
-            </p>
+           
           </div>
 
           {/* Right column - Creative contact & availability */}
@@ -145,7 +125,7 @@ export default function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between space-y-4 border-t border-accent/10 pt-8 text-center md:flex-row md:text-left">
           <div className="font-mono text-xs text-muted-foreground">
-            <span className="text-primary">&lt;</span> built with code{" "}
+            <span className="text-primary">&lt;</span> built with code
             <span className="text-primary">/&gt;</span>
           </div>
           <div className="flex items-center space-x-1 text-xs">
