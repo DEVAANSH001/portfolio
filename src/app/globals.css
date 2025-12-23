@@ -1,11 +1,9 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-/*---break---*/
-@custom-variant dark (&:is(.dark *));
-
 body, * {
   cursor: none !important;
 }
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
@@ -70,7 +68,7 @@ body, * {
   }
 }
 
-/*---break---*/
+
 
 :root {
   --radius: 0.625rem;
@@ -107,7 +105,6 @@ body, * {
   --sidebar-ring: oklch(0.704 0.04 256.788);
 }
 
-/*---break---*/
 
 .dark {
   --background: oklch(0.129 0.042 264.695);
@@ -142,9 +139,6 @@ body, * {
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
-
-/*---break---*/
-
 @layer base {
   * {
     @apply border-border outline-ring/50;
