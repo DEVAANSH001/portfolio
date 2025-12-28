@@ -1,90 +1,51 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { FaGraduationCap } from "react-icons/fa";
 import { AuroraText } from "@/components/magicui/aurora-text";
+import { useRef } from "react";
 
 const EXPERIENCE = [
   {
     role: "Backend Engineer",
     company: "Raahi",
-    period: "June 11, 2025 – Present",
+    period: "June 20, 2025 – september 1, 2025",
     description:
-      "Worked on improving Raahi’s website by replacing the old version made with HTML, CSS, and JavaScript with a new version using Next.js 15 and TailwindCSS. Set up user sign-up and login using Firebase, making sure only students with college email IDs can access it. Also created a new landing page to give the site a modern look. Integrated Google Maps API to support ride booking features, helping students see routes and plan their rides more easily.",
-    
-    skills: [
-     "Next.js 15",
-      "Firebase Authentication",
-      "TailwindCSS",
-      "Frontend ",
-      "Google Maps API",
-      "Ride Booking Integration", 
-    ],
+      "Worked on improving Raahi’s website by replacing the old version made with HTML, CSS, and JavaScript with a new version using Next.js 15 and TailwindCSS. Set up user sign-up and login using Firebase, making sure only students with college email IDs can access it.",
+    skills: ["Next.js 15", "Firebase Authentication", "TailwindCSS", "Google Maps API"],
   },
   {
     role: "Backend Engineer",
     company: "Zonomo",
     period: "May 15, 2025 – June 15, 2025",
     description:
-    "build AI-first voice appointment system leveraging Vapi's agentic voice capabilities. Integrated voice-to-voice conversational flows directly into the core platform, enabling users to seamlessly book and manage appointments. Additionally implemented a secure payment processing pipeline via razerpay, enhancing transactional reliability and improving user conversion flow across the product lifecycle.",
-    skills: [
-      "Node.js",
-      "Vapi AI Integration",
-      "Voice AI",
-      "Stripe Payment Gateway",
-      "Appointment Scheduling Systems",
-      
-    ],
-  },
-  {
-    role: "Data Analytics Intern",
-    company: "Imarticus Learning",
-    period: "June 2025 – july 2025 ",
-    description:
-      'Gaining hands-on experience with SQL, Python, Power-BI, and Tableau through real-world projects such as banking customer behavior analysis, pizza sales intelligence, and delivery performance dashboards.',
-    skills: [
-      "SQL",
-      "Python",
-      "Power BI",
-      "Tableau",
-      "Exploratory Data Analysis",
-    ],
+      "Build AI-first voice appointment system leveraging Vapi's agentic voice capabilities. Integrated voice-to-voice conversational flows and implemented a secure payment processing pipeline via Razorpay.",
+    skills: ["Node.js", "Vapi AI", "Voice AI", "Scheduling Systems"],
   },
 ];
 
-
-function ExperienceCard({
-  experience,
-  index,
-}: {
-  experience: (typeof EXPERIENCE)[0];
-  index: number;
-}) {
+function ExperienceCard({ experience }: { experience: (typeof EXPERIENCE)[0] }) {
   return (
     <motion.div
-      initial={{ opacity: 0, x: -50 }}
+      initial={{ opacity: 0, x: -20 }}
       whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true }}
-      transition={{
-        delay: index * 0.1,
-        duration: 0.6,
-        ease: "easeOut",
-      }}
-      className="relative pl-8 pb-8 before:absolute before:left-0 before:top-2 before:h-3 before:w-3 before:rounded-full before:bg-primary after:absolute after:left-[5px] after:top-[22px] after:h-[calc(100%-22px)] after:w-0.5 after:bg-primary/30 last:after:hidden"
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.5 }}
+      className="relative pl-12 pb-16"
     >
       <div className="mb-1 text-xl font-bold">{experience.role}</div>
       <div className="mb-2 flex items-center gap-2">
         <span className="font-medium text-primary">{experience.company}</span>
-        <span className="text-sm text-muted-foreground">
-          • {experience.period}
-        </span>
+        <span className="text-sm text-muted-foreground">• {experience.period}</span>
       </div>
-      <p className="mb-3 text-muted-foreground">{experience.description}</p>
+      <p className="mb-4 text-muted-foreground max-w-2xl text-pretty leading-relaxed">
+        {experience.description}
+      </p>
       <div className="flex flex-wrap gap-2">
         {experience.skills.map((skill) => (
-          <span
-            key={skill}
-            className="rounded-full bg-accent/10 px-3 py-1 text-xs font-medium"
+          <span 
+            key={skill} 
+            className="rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-medium text-primary"
           >
             {skill}
           </span>
@@ -95,70 +56,87 @@ function ExperienceCard({
 }
 
 export default function Experience() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start 60%", "end 80%"], 
+  });
+
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
+
+  const positionY = useTransform(smoothProgress, (value) => `${value * 100}%`);
+
   return (
-    <section id="experience" className="w-full py-20">
+    <section id="experience" className="w-full py-24 bg-background overflow-hidden">
       <div className="container px-4">
-       
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-10"
+          className="mb-16"
         >
           <AuroraText className="text-4xl font-bold text-left">
             Professional Journey
           </AuroraText>
         </motion.div>
 
-        {/* Centered content */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="max-w-3xl mx-auto"
-        >
-          <div className="relative">
-            {EXPERIENCE.map((exp, index) => (
-              <ExperienceCard
-                key={exp.company}
-                experience={exp}
-                index={index}
-              />
+        <div className="max-w-4xl mx-auto relative" ref={containerRef}>
+          
+          <div className="absolute left-0 top-2 h-full w-full pointer-events-none">
+            <div className="absolute left-[4px] h-full w-[2px] -translate-x-1/2 bg-muted/20" />
+
+    
+            <motion.div
+              style={{ scaleY: smoothProgress, originY: 0 }}
+              className="absolute left-[4px] h-full w-[2px] -translate-x-1/2 bg-primary z-0"
+            />
+     <motion.div
+              style={{ top: positionY }}
+              className="absolute left-[4px] z-20 -translate-x-1/2 -translate-y-1/2 w-6 h-6 flex items-center justify-center"
+            >
+          
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-40"></span>
+              
+              <span className="relative inline-flex h-3 w-3 rounded-full bg-primary shadow-[0_0_15px_rgba(59,130,246,0.8)]"></span>
+            </motion.div>
+          </div>
+
+          <div className="relative z-10 ml-4">
+            {EXPERIENCE.map((exp) => (
+              <ExperienceCard key={exp.company} experience={exp} />
             ))}
 
-           
+            
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.6, duration: 0.6 }}
-              className="relative pl-8 pb-8 before:absolute before:left-0 before:top-2 before:h-3 before:w-3 before:rounded-full before:bg-primary"
+              className="relative pl-12 pt-4"
             >
-              <div className="flex items-center mb-2">
-                <FaGraduationCap className="mr-2 text-xl text-primary" />
-                <h3 className="text-xl font-bold">Education</h3>
+              <div className="flex items-center mb-3">
+                <FaGraduationCap className="mr-3 text-2xl text-primary/80" />
+                <h3 className="text-2xl font-bold text-foreground">Education</h3>
               </div>
-
-              <div className="mb-1">
-                <p className="text-lg font-semibold text-foreground">
-                  Bennett University
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  B.Tech in Computer Science & Engineering
-                </p>
+              
+              <div className="mb-2">
+                <p className="text-lg font-semibold">Bennett University</p>
+                <p className="text-muted-foreground">B.Tech in Computer Science & Engineering</p>
               </div>
-
-              <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                <span>2023 – 2027</span>
-                <span className="inline-block px-2 py-0.5 rounded-full bg-accent/10 text-accent-foreground font-medium">
+              
+              <div className="flex items-center gap-4 text-sm text-muted-foreground mt-3">
+                <span className="font-mono">2023 – 2027</span>
+                <span className="px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary font-semibold text-xs">
                   CGPA: 8.33
                 </span>
               </div>
             </motion.div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
