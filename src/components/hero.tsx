@@ -261,7 +261,7 @@ export default function Hero() {
                 className={`absolute ${badge.top || ""} ${badge.bottom || ""} ${
                   badge.left || ""
                 } ${badge.right || ""}
-                  z-30 cursor-default rounded-full border-2 bg-background px-3 py-1 text-xs font-semibold shadow-lg
+                  z-30 cursor-default rounded-full border-1 bg-background px-1 py-1 text-sm font-semibold shadow-lg
                   transition-all duration-300 sm:px-4 sm:py-1.5 sm:text-sm
                   border-gray-200 dark:border-gray-700
                   hover:bg-purple-600 hover:text-white hover:border-purple-400
