@@ -3,70 +3,63 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Download, Mail, MapPin, Code } from "lucide-react";
-import { FaNode } from "react-icons/fa";
 import { AuroraText } from "@/components/magicui/aurora-text";
-import {
-  RiNextjsFill,
-  RiReactjsFill,
-  RiTailwindCssFill,
-  RiTwitterXLine,
-} from "react-icons/ri";
+import { RiNextjsFill, RiReactjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { SiMongodb } from "react-icons/si";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Hero() {
-  
   const roles = ["Software Developer", "Web Designer", "Backend Engineer", "AI Engineer"];
   const [roleIndex, setRoleIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setRoleIndex((prev) => (prev + 1) % roles.length);
-    }, 2000);
+    }, 2500);
     return () => clearInterval(interval);
-  }, []);
+  }, [roles.length]);
 
   return (
-    <section className="py-3 md-10">
-      <div className="grid md:grid-cols-3 gap-10 items-center max-w-6xl mx-auto">
+    <section className="relative py-12 md:py-24 overflow-hidden">
+      <div className="absolute top-0 right-0 -z-10 h-[300px] w-[300px]  rounded-full" />
+      <div className="absolute bottom-0 left-0 -z-10 h-[300px] w-[300px  rounded-full" />
+
+      <div className="grid md:grid-cols-3 gap-12 items-center max-w-6xl mx-auto px-4">
+       
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="space-y-6 md:col-span-2"
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          className="space-y-8 md:col-span-2"
         >
-          <div className="space-y-2">
-            <h1 className="text-3xl sm:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-700 font-bold">
+          <div className="space-y-4">
+            <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight">
               <AuroraText>Devaansh Dubey</AuroraText>
             </h1>
-
-            {/* ✅ Animated Roles */}
-            <div className="h-6 sm:h-8 overflow-hidden">
-  <AnimatePresence mode="wait">
-    <motion.p
-      key={roles[roleIndex]}
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -10 }}
-      transition={{ duration: 0.6 }}
-      className="text-lg sm:text-xl text-muted-foreground"
-    >
-      {roles[roleIndex]}
-    </motion.p>
-  </AnimatePresence>
-</div>
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 text-sm text-muted-foreground">
-            <div className="flex items-center gap-1">
-              <Mail className="h-4 w-4" />
-              <a href="mailto:haquedot@gmail.com">
-                devaanshdubey2211@gmail.com
-              </a>
+            <div className="h-8 overflow-hidden">
+              <AnimatePresence mode="wait">
+                <motion.p
+                  key={roles[roleIndex]}
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -15 }}
+                  transition={{ duration: 0.4 }}
+                  className="text-xl sm:text-2xl font-medium text-muted-foreground flex items-center gap-3"
+                >
+                  <span className="h-[2px] w-8 bg-primary/50 rounded-full hidden sm:block" />
+                  {roles[roleIndex]}
+                </motion.p>
+              </AnimatePresence>
             </div>
-            <div className="flex items-center gap-1">
-              <MapPin className="h-4 w-4" />
+          </div>
+          <div className="flex flex-wrap gap-5 text-sm text-muted-foreground">
+            <div className="flex items-center gap-2 hover:text-primary transition-colors">
+              <Mail className="h-4 w-4" />
+              <a href="mailto:devaanshdubey2211@gmail.com">devaanshdubey2211@gmail.com</a>
+            </div>
+            <div className="flex items-center gap-2">
+              <MapPin className="h-4 w-4 text-red-500" />
               <span>Noida, India</span>
             </div>
           </div>
@@ -142,10 +135,9 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="flex justify-center h-48 md:h-auto"
         >
-          <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md aspect-square">
-            {/* Animated border */}
+          <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md aspect-square p-6">
             <motion.div
-              className="absolute inset-0 rounded-xl"
+              className="absolute inset-6 rounded-xl -z-10"
               animate={{
                 rotate: [0, 5, -5, 0],
                 scale: [1, 1.02, 1.02, 1],
@@ -157,112 +149,107 @@ export default function Hero() {
               }}
             />
 
-            {/* Tech stack grid */}
-            <div className="absolute inset-0 grid grid-cols-2 gap-2 sm:gap-4 p-2 sm:p-4">
-              {/* React */}
-              <motion.div
-                className="rounded-xl p-2 sm:p-4 flex items-center justify-center bg-gradient-to-br from-blue-200 to-white dark:from-blue-900 dark:to-gray-800 shadow-md transition-all hover:shadow-purple-500/50"
-                whileHover={{ scale: 1.07 }}
-                whileTap={{ scale: 0.95 }}
-              >
+            <div className="absolute inset-6 flex flex-col gap-3 sm:gap-4 -z-10">
+              <div className="flex gap-3 sm:gap-4 flex-1">
                 <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{
-                    duration: 10,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
-                  className="text-4xl text-[#087ea4]"
+                  className="flex-1 rounded-xl p-3 sm:p-6 flex items-center justify-center bg-gradient-to-br from-blue-200 to-white dark:from-blue-900 dark:to-gray-800 shadow-md transition-all hover:shadow-purple-500/50"
+                  whileHover={{ scale: 1.07 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  <RiReactjsFill />
+                  <motion.div
+                    animate={{ rotate: 360 }}
+                    transition={{
+                      duration: 10,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
+                    className="text-5xl sm:text-6xl text-[#087ea4]"
+                  >
+                    <RiReactjsFill />
+                  </motion.div>
                 </motion.div>
-              </motion.div>
-
-              {/* Next.js */}
-              <motion.div
-                className="rounded-xl p-2 sm:p-4 flex items-center justify-center bg-gradient-to-br from-gray-200 to-white dark:from-gray-800 dark:to-gray-700 shadow-md transition-all hover:shadow-purple-500/50"
-                initial={{ y: -20 }}
-                animate={{ y: 0 }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                  ease: "easeInOut",
-                }}
-                whileHover={{ scale: 1.07 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <div className="text-4xl">
-                  <RiNextjsFill />
-                </div>
-              </motion.div>
-
-              {/* MongoDB */}
-              <motion.div
-                className="rounded-xl p-2 sm:p-4 flex items-center justify-center bg-gradient-to-br from-green-100 to-white dark:from-green-900 dark:to-gray-800 shadow-md transition-all hover:shadow-purple-500/50"
-                whileHover={{ scale: 1.07 }}
-                whileTap={{ scale: 0.95 }}
-              >
                 <motion.div
-                  animate={{ y: [0, -5, 0] }}
+                  className="flex-1 rounded-xl p-3 sm:p-6 flex items-center justify-center bg-gradient-to-br from-gray-200 to-white dark:from-gray-800 dark:to-gray-700 shadow-md transition-all hover:shadow-purple-500/50"
+                  initial={{ y: -20 }}
+                  animate={{ y: 0 }}
                   transition={{
-                    duration: 3,
+                    duration: 2,
                     repeat: Infinity,
+                    repeatType: "reverse",
                     ease: "easeInOut",
                   }}
-                  className="text-4xl text-green-600"
+                  whileHover={{ scale: 1.07 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  <SiMongodb />
+                  <div className="text-5xl sm:text-6xl dark:text-white">
+                    <RiNextjsFill />
+                  </div>
                 </motion.div>
-              </motion.div>
+              </div>
 
-              {/* Tailwind */}
-              <motion.div
-                className="rounded-xl p-2 sm:p-4 flex items-center justify-center bg-gradient-to-br from-sky-100 to-white dark:from-sky-900 dark:to-gray-800 shadow-md transition-all hover:shadow-purple-500/50"
-                animate={{
-                  boxShadow: [
-                    "0 0 0 0px rgba(56, 189, 248, 0.2)",
-                    "0 0 0 10px rgba(56, 189, 248, 0.15)",
-                    "0 0 0 0px rgba(56, 189, 248, 0.2)",
-                  ],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                }}
-                whileHover={{ scale: 1.07 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <div className="text-4xl text-sky-500">
-                  <RiTailwindCssFill />
-                </div>
-              </motion.div>
+              <div className="flex gap-3 sm:gap-4 flex-1">
+                <motion.div
+                  className="flex-1 rounded-xl p-3 sm:p-6 flex items-center justify-center bg-gradient-to-br from-green-100 to-white dark:from-green-900 dark:to-gray-800 shadow-md transition-all hover:shadow-purple-500/50"
+                  whileHover={{ scale: 1.07 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <motion.div
+                    animate={{ y: [0, -5, 0] }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                    className="text-5xl sm:text-6xl text-green-600"
+                  >
+                    <SiMongodb />
+                  </motion.div>
+                </motion.div>
+                <motion.div
+                  className="flex-1 rounded-xl p-3 sm:p-6 flex items-center justify-center bg-gradient-to-br from-sky-100 to-white dark:from-sky-900 dark:to-gray-800 shadow-md transition-all hover:shadow-purple-500/50"
+                  animate={{
+                    boxShadow: [
+                      "0 0 0 0px rgba(56, 189, 248, 0.2)",
+                      "0 0 0 10px rgba(56, 189, 248, 0.15)",
+                      "0 0 0 0px rgba(56, 189, 248, 0.2)",
+                    ],
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                  }}
+                  whileHover={{ scale: 1.07 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <div className="text-5xl sm:text-6xl text-sky-500">
+                    <RiTailwindCssFill />
+                  </div>
+                </motion.div>
+              </div>
             </div>
-
-            {/* Floating Badges */}
             {[
               {
                 text: "ReactJs",
-                top: "-top-3 sm:-top-5",
-                left: "-left-3 sm:-left-5",
+                top: "-top-2 sm:-top-3",
+                left: "-left-2 sm:-left-3",
                 delay: 0.1,
               },
               {
                 text: "Tailwind CSS",
-                bottom: "-bottom-3 sm:-bottom-5",
-                right: "-right-3 sm:-right-5",
+                bottom: "-bottom-2 sm:-bottom-3",
+                right: "-right-2 sm:-right-3",
                 delay: 0.1,
               },
               {
                 text: "Next.js",
-                top: "-top-3 sm:-top-5",
-                right: "-right-3 sm:-right-5",
+                top: "-top-2 sm:-top-3",
+                right: "-right-2 sm:-right-3",
                 delay: 0.1,
               },
               {
                 text: "MongoDB",
-                bottom: "-bottom-3 sm:-bottom-5",
-                left: "-left-3 sm:-left-5",
+                bottom: "-bottom-2 sm:-bottom-3",
+                left: "-left-2 sm:-left-3",
                 delay: 0.1,
               },
             ].map((badge, idx) => (
@@ -270,16 +257,16 @@ export default function Hero() {
                 key={idx}
                 whileHover={{
                   scale: 1.1,
-                  backgroundColor: "#a855f7",
-                  color: "#ffffff",
-                  boxShadow: "0 0 20px rgba(168, 85, 247, 0.5)",
                 }}
                 className={`absolute ${badge.top || ""} ${badge.bottom || ""} ${
                   badge.left || ""
-                } ${badge.right || ""} 
-          bg-background px-2 py-0.5 sm:px-3 sm:py-1 
-          rounded-full text-xs sm:text-sm shadow-md border 
-          transition-all duration-300 cursor-default`}
+                } ${badge.right || ""}
+                  z-30 cursor-default rounded-full border-2 bg-background px-3 py-1 text-xs font-semibold shadow-lg
+                  transition-all duration-300 sm:px-4 sm:py-1.5 sm:text-sm
+                  border-gray-200 dark:border-gray-700
+                  hover:bg-purple-600 hover:text-white hover:border-purple-400
+                  hover:shadow-[0_0_20px_rgba(168,85,247,0.5)]
+                  dark:hover:bg-purple-500`}
                 animate={{
                   ...(badge.left || badge.right
                     ? { x: [0, badge.left ? -5 : 5, 0] }
