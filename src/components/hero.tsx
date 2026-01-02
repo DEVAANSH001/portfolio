@@ -10,7 +10,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Hero() {
-  const roles = ["Software Developer", "Web Designer", "Backend Engineer", "AI Engineer"];
+  const roles = ["Software Developer"];
   const [roleIndex, setRoleIndex] = useState(0);
 
   useEffect(() => {
@@ -26,7 +26,6 @@ export default function Hero() {
       <div className="absolute bottom-0 left-0 -z-10 h-[300px] w-[300px  rounded-full" />
 
       <div className="grid md:grid-cols-3 gap-12 items-center max-w-6xl mx-auto px-4">
-       
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
@@ -56,24 +55,22 @@ export default function Hero() {
           <div className="flex flex-wrap gap-5 text-sm text-muted-foreground">
             <div className="flex items-center gap-2 hover:text-primary transition-colors">
               <Mail className="h-4 w-4" />
-              <a href="mailto:devaanshdubey2211@gmail.com">devaanshdubey2211@gmail.com</a>
+              <a href="mailto:devaanshdubey2211@gmail.com">
+                devaanshdubey2211@gmail.com
+              </a>
             </div>
             <div className="flex items-center gap-2">
               <MapPin className="h-4 w-4 text-red-500" />
               <span>Noida, India</span>
             </div>
           </div>
-
-          <p className="text-muted-foreground text-sm sm:text-base">
-            A goal-oriented software developer with experience in building{" "}
-            <br></br>full-stack web applications using modern technologies like
-            React, Next.js, Node.js, and more. Passionate about creating
-            seamless user experiences on the front end while ensuring robust and
-            scalable logic on the backend.
+          <p className="text-muted-foreground text-lg md:text-xl">
+            Passionate about creating seamless user experiences on the frontend
+            while ensuring robust & scalable logic on the backend.
           </p>
 
           <div className="flex flex-wrap gap-2 sm:gap-3">
-            <Link  href="/RESUME.pdf" target="_blank" download>
+            <Link href="/RESUME.pdf" target="_blank" download>
               <Button
                 size="sm"
                 className="text-xs sm:text-sm bg-blue-600 hover:bg-purple-600 text-white rounded-full px-4 py-2 transition-colors duration-500"
@@ -102,7 +99,7 @@ export default function Hero() {
               </Button>
             </Link>
             <Link
-              href="https://leetcode.com/u/Devaanshdubey001/"
+              href="https://codolio.com/profile/Devaansh"
               target="_blank"
             >
               <Button

@@ -4,6 +4,14 @@ body, * {
   cursor: none !important;
 }
 @custom-variant dark (&:is(.dark *));
+#contact {
+  scroll-margin-top: 120px;
+}
+
+#projects {
+  scroll-margin-top: 50px;
+}
+
 
 @theme inline {
   --color-background: var(--background);
