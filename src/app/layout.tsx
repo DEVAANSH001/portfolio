@@ -9,6 +9,7 @@ import { Suspense } from "react"
 import { SmoothCursor } from "@/components/ui/smooth-cursor";
 // import LandingAnimation from "@/components/LandingAnimation";
 import { ScrollProgress } from "@/components/magicui/scroll-progress";
+import { Pointer } from "@/components/ui/pointer"
 import { Analytics } from "@vercel/analytics/next"
 import ClientLayout from "@/components/ClientLayout"
 const inter = Inter({ subsets: ["latin"] })
@@ -32,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <SmoothCursor />
+        <Pointer />
         <Analytics />
        
         <ThemeProvider

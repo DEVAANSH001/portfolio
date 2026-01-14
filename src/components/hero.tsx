@@ -65,8 +65,8 @@ export default function Hero() {
             </div>
           </div>
           <p className="text-muted-foreground text-lg md:text-xl">
-            Passionate about creating seamless user experiences on the frontend
-            while ensuring robust & scalable logic on the backend.
+           Engineered and built backend services with scalable architecture
+            reliable data flow, and efficient system design.
           </p>
 
           <div className="flex flex-wrap gap-2 sm:gap-3">
