@@ -33,7 +33,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <Pointer />
         <Analytics />
        
         <ThemeProvider
@@ -45,6 +44,7 @@ export default function RootLayout({
           <ClientLayout>
             <Suspense fallback={null}>
               <Header />
+        <Pointer />
               <main className="max-w-4x1 mx-auto px-4 sm:px-6 lg:px-8">
                 {children}
               </main>
