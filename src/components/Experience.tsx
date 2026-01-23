@@ -7,22 +7,36 @@ import { useRef } from "react";
 
 const EXPERIENCE = [
   {
-    role: "Backend Engineer",
+    role: "Backend Developer Intern",
     company: "Raahi",
-    period: "June 20, 2025 – september 1, 2025",
+    period: "July 2025 – August 2025",
     description:
-      "Worked on improving Raahi’s website by replacing the old version made with HTML, CSS, and JavaScript with a new version using Next.js 15 and TailwindCSS. Set up user sign-up and login using Firebase, making sure only students with college email IDs can access it.",
-    skills: ["Next.js 15", "Firebase Authentication", "TailwindCSS", "Google Maps API"],
+      "Built a full-stack ride-sharing platform serving 500+ active users using Next.js, Firebase, and TailwindCSS. Implemented secure Firebase authentication with OTP verification, restricting access to verified college email IDs. Developed core backend features including ride matching, fare calculation, booking confirmations, and real-time chat between riders and drivers. Integrated Google Maps API for live route visualization and location tracking.",
+    skills: [
+      "Next.js",
+      "Firebase",
+      "Firebase Authentication",
+      "Realtime Chat",
+      "Google Maps API",
+      "Tailwind CSS",
+    ],
   },
   {
-    role: "Backend Engineer",
+    role: "Backend Developer Intern",
     company: "Zonomo",
-    period: "May 15, 2025 – June 15, 2025",
+    period: "May 2025 – July 2025",
     description:
-      "Build AI-first voice appointment system leveraging Vapi's agentic voice capabilities. Integrated voice-to-voice conversational flows and implemented a secure payment processing pipeline via Razorpay.",
-    skills: ["Node.js", "Vapi AI", "Voice AI", "Scheduling Systems"],
+      "Developed backend features for a customer service booking platform, enabling appointment scheduling and management. Implemented a real-time bargaining system allowing dynamic price negotiations between customers and service providers. Built real-time chat functionality to support seamless communication and booking coordination.",
+    skills: [
+      "Node.js",
+      "Backend Systems",
+      "Real-time Communication",
+      "Scheduling Systems",
+      "Negotiation Logic",
+    ],
   },
 ];
+
 
 function ExperienceCard({ experience }: { experience: (typeof EXPERIENCE)[0] }) {
   return (
@@ -131,7 +145,7 @@ export default function Experience() {
               <div className="flex items-center gap-4 text-sm text-muted-foreground mt-3">
                 <span className="font-mono">2023 – 2027</span>
                 <span className="px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary font-semibold text-xs">
-                  CGPA: 8.33
+                  CGPA: 8.45
                 </span>
               </div>
             </motion.div>

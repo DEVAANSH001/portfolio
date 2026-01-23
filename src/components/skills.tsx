@@ -7,7 +7,8 @@ import {
   SiJavascript, SiTypescript, SiPython, SiReact, SiNextdotjs,
   SiNodedotjs, SiTailwindcss, SiTensorflow, SiNumpy, SiPandas,
   SiAmazon, SiDocker, SiMongodb, SiFastapi, SiOpenai, SiMysql,
-  SiSupabase, SiVercel, SiFirebase, SiGooglecloud
+  SiSupabase, SiVercel, SiFirebase, SiGooglecloud,
+  SiPostgresql
 } from "react-icons/si";
 import { BsLightningChargeFill } from "react-icons/bs";
 import React from "react";
@@ -27,7 +28,7 @@ const SKILLS = [
   { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
   { name: "Supabase", icon: SiSupabase, color: "#3ECF8E" },
   { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
-  { name: "Google Cloud", icon: SiGooglecloud, color: "#4285F4" },
+  { name: "PostgreSQL", icon: SiPostgresql, color: "#4285F4" },
   { name: "AWS", icon: SiAmazon, color: "#FF9900" },
   { name: "Docker", icon: SiDocker, color: "#2496ED" },
   { name: "FastAPI", icon: SiFastapi, color: "#009688" },

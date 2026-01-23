@@ -11,25 +11,31 @@ import { AuroraText } from "@/components/magicui/aurora-text";
 
 const projects = [
   {
-    logo: "/matchwize.svg",
-    title: "Matchwize",
+    logo: "/dsa_.png",
+    title: "Dsavisualizer",
     description:
-      "matchwize analyzes your resume against job descriptions to give you a match score and actionable suggestions to improve your chances.",
-    image: "/matchwize.png",
+  "An interactive Data Structures and Algorithms visualizer that helps users understand core DSA concepts through step-by-step animations and real-time execution. Built to make learning algorithms intuitive and visual.",
+    image: "/dsa_.png",
     tags: [
-      "Next.js",
-      "Node.js",
-      "Express.js",
-      "Supabase",
-      "Tailwind CSS",
-      "Gemini API",
-    ],
-    demoUrl: "",
-    githubUrl: "",
+  "Next.js",
+  "React",
+  "TypeScript",
+  "Tailwind CSS",
+  "Data Structures",
+  "Algorithms",
+  "DSA Visualization",
+  "Frontend",
+],
+    demoUrl: "https://dsavisualizerdev.vercel.app/",
+    githubUrl: "https://github.com/DEVAANSH001/visualize-DSA",
     features: [
-      "Gemini API integration for resume analysis",
-      "Supabase for data storage",
-    ],
+  "Interactive visualizations for core data structures and algorithms",
+  "Step-by-step animation to demonstrate algorithm execution",
+  "Clean and beginner-friendly UI for learning DSA concepts",
+  "Built with React and Next.js for smooth client-side rendering",
+  "Modular codebase allowing easy addition of new algorithms",
+  "Responsive design for desktop and tablet screens",
+],
   },
   {
   logo: "/inview.png",
@@ -49,6 +55,60 @@ const projects = [
     "Deployed on Vercel with responsive design",
   ],
 },
+  {
+    logo: "/Sc.png",
+    title: "analytic_dashboard",
+    description:
+  "A ready-to-use analytics dashboard UI built with Next.js and ShadCN-UI, featuring modern layouts, reusable components, and responsive design for rapid product development.",
+    image: "/Sc.png",
+    tags: [
+  "Next.js",
+  "ShadCN UI",
+  "React",
+  "Tailwind CSS",
+  "Dashboard UI",
+  "Frontend",
+],
+    demoUrl: "https://analytic-dashboard-ui.vercel.app",
+    githubUrl: "https://github.com/DEVAANSH001/analytic_dashboard",
+    features: [
+  "Modern analytics dashboard built using ShadCN-UI components",
+  "Responsive layout optimized for desktop and mobile devices",
+  "Reusable and customizable UI components",
+  "Clean Next.js project structure for scalability",
+  "Tailwind CSS for fast styling and consistent design",
+]
+  },
+  {
+    logo: "/sce.png",
+    title: "AgentFlow",
+    description:
+  "Agentify is a full-stack AI agent builder platform that lets users visually design, run, and manage intelligent AI workflows using a drag-and-drop interface. Built with Next.js, Convex, and modern AI SDKs, it supports authentication, real-time data, security, and subscription-based monetization.",
+    image: "/sce.png",
+    tags: [
+  "Next.js",
+  "React flow",
+  "TypeScript",
+  "Convex DB",
+  "Clerk Auth",
+  "ShadCN UI",
+  "Tailwind CSS",
+  "AI Agents",
+  "React Flow",
+  "OpenAI / Gemini",
+  
+],
+    demoUrl: "https://ai-agent-builder-demo.vercel.app/",
+    githubUrl: "https://github.com/DEVAANSH001/AgentFlow",
+    features: [
+  "Visual drag-and-drop AI workflow builder using React Flow",
+  "AI agent logic powered by OpenAI / Gemini SDKs",
+  "Custom node and component system for agent workflows",
+  "Preview, test, and publish agents for external use",
+],
+  },
+  
+  
 {
   logo: "/heart2.png",
   title: "Heart Disease Prediction",
