@@ -9,7 +9,8 @@ import { Suspense } from "react"
 import { SmoothCursor } from "@/components/ui/smooth-cursor";
 // import LandingAnimation from "@/components/LandingAnimation";
 import { ScrollProgress } from "@/components/magicui/scroll-progress";
-import { Pointer } from "@/components/ui/pointer"
+import PointerOnlyDesktop from "@/components/PointerOnlyDesktop"
+
 import { Analytics } from "@vercel/analytics/next"
 import ClientLayout from "@/components/ClientLayout"
 const inter = Inter({ subsets: ["latin"] })
@@ -44,7 +45,8 @@ export default function RootLayout({
           <ClientLayout>
             <Suspense fallback={null}>
               <Header />
-        <Pointer />
+        <PointerOnlyDesktop />
+
               <main className="max-w-4x1 mx-auto px-4 sm:px-6 lg:px-8">
                 {children}
               </main>
