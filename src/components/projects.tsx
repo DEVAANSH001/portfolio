@@ -11,6 +11,54 @@ import { AuroraText } from "@/components/magicui/aurora-text";
 
 const projects = [
   {
+  logo: "/inview.ai.png",
+  title: "InView AI",
+  description:
+    "A voice-based AI interview platform where users upload their resume and participate in mock interviews powered by Vapi AI.",
+  image: "/inview.ai.png",
+  tags: ["Next.js", "React", "Tailwind CSS", "Firebase", "Vercel", "Vapi AI"],
+  demoUrl: "https://inview-ai.vercel.app/", 
+  githubUrl: "https://github.com/DEVAANSH001/inview_ai", 
+  
+  features: [
+    "Resume upload with real-time parsing",
+    "Voice-to-voice mock interviews using Vapi AI",
+    "Dynamic feedback and scoring",
+    "Firebase for authentication and data storage",
+    "Deployed on Vercel with responsive design",
+  ],
+},
+ {
+    logo: "/agent.png",
+    title: "AgentFlow",
+    description:
+  "Agentify is a full-stack AI agent builder platform that lets users visually design, run, and manage intelligent AI workflows using a drag-and-drop interface. Built with Next.js, Convex, and modern AI SDKs, it supports authentication, real-time data, security, and subscription-based monetization.",
+    image: "/agent.png",
+    tags: [
+  "Next.js",
+  "React flow",
+  "TypeScript",
+  "Convex DB",
+  "Clerk Auth",
+  "ShadCN UI",
+  "Tailwind CSS",
+  "AI Agents",
+  "React Flow",
+  "OpenAI / Gemini",
+  
+],
+    demoUrl: "https://ai-agent-builder-demo.vercel.app/",
+    githubUrl: "https://github.com/DEVAANSH001/AgentFlow",
+    features: [
+  "Visual drag-and-drop AI workflow builder using React Flow",
+  "AI agent logic powered by OpenAI / Gemini SDKs",
+  "Custom node and component system for agent workflows",
+  "Preview, test, and publish agents for external use",
+],
+  },
+  
+  
+  {
     logo: "/dsa_.png",
     title: "Dsavisualizer",
     description:
@@ -37,24 +85,7 @@ const projects = [
   "Responsive design for desktop and tablet screens",
 ],
   },
-  {
-  logo: "/inview.png",
-  title: "InView AI",
-  description:
-    "A voice-based AI interview platform where users upload their resume and participate in mock interviews powered by Vapi AI.",
-  image: "/inview.png",
-  tags: ["Next.js", "React", "Tailwind CSS", "Firebase", "Vercel", "Vapi AI"],
-  demoUrl: "https://inview-ai.vercel.app/", 
-  githubUrl: "https://github.com/DEVAANSH001/inview_ai", 
   
-  features: [
-    "Resume upload with real-time parsing",
-    "Voice-to-voice mock interviews using Vapi AI",
-    "Dynamic feedback and scoring",
-    "Firebase for authentication and data storage",
-    "Deployed on Vercel with responsive design",
-  ],
-},
   {
     logo: "/Sc.png",
     title: "analytic_dashboard",
@@ -79,34 +110,7 @@ const projects = [
   "Tailwind CSS for fast styling and consistent design",
 ]
   },
-  {
-    logo: "/sce.png",
-    title: "AgentFlow",
-    description:
-  "Agentify is a full-stack AI agent builder platform that lets users visually design, run, and manage intelligent AI workflows using a drag-and-drop interface. Built with Next.js, Convex, and modern AI SDKs, it supports authentication, real-time data, security, and subscription-based monetization.",
-    image: "/sce.png",
-    tags: [
-  "Next.js",
-  "React flow",
-  "TypeScript",
-  "Convex DB",
-  "Clerk Auth",
-  "ShadCN UI",
-  "Tailwind CSS",
-  "AI Agents",
-  "React Flow",
-  "OpenAI / Gemini",
-  
-],
-    demoUrl: "https://ai-agent-builder-demo.vercel.app/",
-    githubUrl: "https://github.com/DEVAANSH001/AgentFlow",
-    features: [
-  "Visual drag-and-drop AI workflow builder using React Flow",
-  "AI agent logic powered by OpenAI / Gemini SDKs",
-  "Custom node and component system for agent workflows",
-  "Preview, test, and publish agents for external use",
-],
-  },
+ 
   
   
 {
