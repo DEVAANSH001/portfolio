@@ -29,11 +29,11 @@ const projects = [
   ],
 },
  {
-    logo: "/agent.png",
+    logo: "/agent-flow.png",
     title: "AgentFlow",
     description:
-  "Agentify is a full-stack AI agent builder platform that lets users visually design, run, and manage intelligent AI workflows using a drag-and-drop interface. Built with Next.js, Convex, and modern AI SDKs, it supports authentication, real-time data, security, and subscription-based monetization.",
-    image: "/agent.png",
+  "Agentify is a AI agent builder platform that lets users visually design, run, and manage intelligent AI workflows using a drag-and-drop interface. Built with Next.js, Convex, and modern AI SDKs, it supports authentication, real-time data, security, and subscription-based monetization.",
+    image: "/agent-flow.png",
     tags: [
   "Next.js",
   "React flow",
@@ -44,14 +44,14 @@ const projects = [
   "Tailwind CSS",
   "AI Agents",
   "React Flow",
-  "OpenAI / Gemini",
+  "Gemini",
   
 ],
-    demoUrl: "https://ai-agent-builder-demo.vercel.app/",
+    demoUrl: "https://agent-flow-dev.vercel.app/",
     githubUrl: "https://github.com/DEVAANSH001/AgentFlow",
     features: [
   "Visual drag-and-drop AI workflow builder using React Flow",
-  "AI agent logic powered by OpenAI / Gemini SDKs",
+  "AI agent logic powered by Gemini SDKs",
   "Custom node and component system for agent workflows",
   "Preview, test, and publish agents for external use",
 ],
