@@ -34,9 +34,9 @@ export default function Hero() {
           className="space-y-6 sm:space-y-8 md:col-span-2 order-1"
         >
           <div className="space-y-3 sm:space-y-4">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight">
-              <AuroraText>Devaansh Dubey</AuroraText>
-            </h1>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter leading-none pb-2 bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-500 to-purple-600">
+  Devaansh Dubey
+</h1>
             <div className="h-7 sm:h-8 overflow-hidden">
               <AnimatePresence mode="wait">
                 <motion.p
@@ -72,14 +72,14 @@ export default function Hero() {
             reliable data flow, and efficient system design.
           </p>
 
-          <div className="flex flex-wrap gap-2 sm:gap-3">
+          <div className="flex flex-wrap gap-2 sm:gap-3 mb-8 sm:mb-0">
             <Link href="/RESUME.pdf" target="_blank" download>
               <Button
                 size="sm"
-                className="text-xs sm:text-sm bg-blue-600 hover:bg-purple-600 text-white rounded-full px-4 sm:px-5 py-2 transition-colors duration-500"
+                className="text-xs sm:text-sm bg-blue-600 hover:bg-purple-600 text-white rounded-full px-2.5 [@media(min-width:400px)]:px-5 py-2 transition-colors duration-500"
               >
-                <Download className="mr-2 h-3 w-3 sm:h-4 sm:w-4" />
-                Resume
+                <Download className="h-3 w-3 sm:h-4 sm:w-4 [@media(min-width:400px)]:mr-2" />
+                <span className="hidden [@media(min-width:400px)]:inline">Resume</span>
               </Button>
             </Link>
 
@@ -87,7 +87,7 @@ export default function Hero() {
               <Button
                 variant="outline"
                 size="sm"
-                className="text-xs sm:text-sm px-3 sm:px-4"
+                className="text-xs sm:text-sm px-2.5 sm:px-4"
               >
                 <Github className="h-3 w-3 sm:h-4 sm:w-4" />
               </Button>
@@ -96,7 +96,7 @@ export default function Hero() {
               <Button
                 variant="outline"
                 size="sm"
-                className="text-xs sm:text-sm px-3 sm:px-4"
+                className="text-xs sm:text-sm px-2.5 sm:px-4"
               >
                 <Mail className="h-3 w-3 sm:h-4 sm:w-4" />
               </Button>
@@ -105,7 +105,7 @@ export default function Hero() {
               <Button
                 variant="outline"
                 size="sm"
-                className="text-xs sm:text-sm px-3 sm:px-4"
+                className="text-xs sm:text-sm px-2.5 sm:px-4"
               >
                 <Code className="h-3 w-3 sm:h-4 sm:w-4" />
               </Button>
@@ -117,7 +117,7 @@ export default function Hero() {
               <Button
                 variant="outline"
                 size="sm"
-                className="text-xs sm:text-sm px-3 sm:px-4"
+                className="text-xs sm:text-sm px-2.5 sm:px-4"
               >
                 <Linkedin className="h-3 w-3 sm:h-4 sm:w-4" />
               </Button>
