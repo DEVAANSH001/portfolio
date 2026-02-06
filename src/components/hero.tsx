@@ -73,7 +73,7 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-wrap gap-2 sm:gap-3 mb-8 sm:mb-0">
-            <Link href="/RESUME.pdf" target="_blank" download>
+            <Link href="/RESUME_SDE.pdf" target="_blank" download>
               <Button
                 size="sm"
                 className="text-xs sm:text-sm bg-blue-600 hover:bg-purple-600 text-white rounded-full px-2.5 [@media(min-width:400px)]:px-5 py-2 transition-colors duration-500"
