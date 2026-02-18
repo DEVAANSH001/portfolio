@@ -2,6 +2,8 @@ import type React from "react"
 import type { Metadata } from "next/types"
 import { Inter } from "next/font/google"
 import "./globals.css"
+import Script from "next/script"
+
 import { ThemeProvider } from "@/components/theme-provider"
 import Header from "@/components/header"
 import { Suspense } from "react"
@@ -56,6 +58,7 @@ export default function RootLayout({
             </Suspense>
           </ClientLayout>
         </ThemeProvider>
+        <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "94f28722be6043ddafb53fea8cec6f4e"}'></script>
       </body>
     </html>
   )
