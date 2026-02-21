@@ -99,9 +99,12 @@ export default function SkillsSection() {
           variants={containerVariants}
           className="max-w-6xl mx-auto"
         >
-          <h2 className="text-3xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary/70 via-purple-500 to-purple-800 py-7 text-left">
-            <AuroraText>Skills & Technologies</AuroraText>
-          </h2>
+        <h2 className="text-4xl sm:text-4xl font-extrabold tracking-tight">
+  <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-500 to-blue-700 animate-gradient-x">
+            Skills & Technologies
+            </span>
+            </h2>
+          
 
          
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5">

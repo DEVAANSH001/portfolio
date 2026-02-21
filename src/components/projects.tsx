@@ -164,9 +164,13 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.4 }}
-            className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary/70 via-purple-500 to-purple-800"
+            className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary/70 via-blue-500 to-blue-800"
           >
-            <AuroraText>Recent Projects</AuroraText>
+             <h2 className="text-4xl sm:text-4xl font-extrabold tracking-tight">
+  <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-500 to-blue-700 animate-gradient-x">
+            Recent Projects
+            </span>
+            </h2>
           </motion.h2>
         </div>
 

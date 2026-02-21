@@ -7,6 +7,8 @@ import { AuroraText } from "@/components/magicui/aurora-text";
 import { RiNextjsFill, RiReactjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { SiMongodb } from "react-icons/si";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
+import { CanvasText } from "@/components/ui/canvas-text";
 import { useEffect, useState } from "react";
 
 export default function Hero() {
@@ -26,7 +28,6 @@ export default function Hero() {
       <div className="absolute bottom-0 left-0 -z-10 h-[200px] w-[200px] sm:h-[300px] sm:w-[300px] rounded-full" />
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-center max-w-6xl mx-auto px-4 sm:px-6">
-        {/* Text Content */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
@@ -34,9 +35,27 @@ export default function Hero() {
           className="space-y-6 sm:space-y-8 md:col-span-2 order-1"
         >
           <div className="space-y-3 sm:space-y-4">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter leading-none pb-2 bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-500 to-purple-600">
-  Devaansh Dubey
-</h1>
+            <div className="pb-0.6">
+            <CanvasText
+          text="Devaansh Dubey"
+          className="text-4xl sm:text-6xl font-bold"
+          backgroundClassName="bg-blue-600 dark:bg-blue-700"
+          colors={[
+            "rgba(0, 153, 255, 1)",
+            "rgba(0, 153, 255, 0.9)",
+            "rgba(0, 153, 255, 0.8)",
+            "rgba(0, 153, 255, 0.7)",
+            "rgba(0, 153, 255, 0.6)",
+            "rgba(0, 153, 255, 0.5)",
+            "rgba(0, 153, 255, 0.4)",
+            "rgba(0, 153, 255, 0.3)",
+            "rgba(0, 153, 255, 0.2)",
+            "rgba(0, 153, 255, 0.1)",
+          ]}
+          lineGap={4}
+          animationDuration={20}
+        />
+        </div>
             <div className="h-7 sm:h-8 overflow-hidden">
               <AnimatePresence mode="wait">
                 <motion.p
@@ -73,10 +92,10 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-wrap gap-2 sm:gap-3 mb-8 sm:mb-0">
-            <Link href="/RESUME_SDE.pdf" target="_blank" download>
+            <Link href="/DEVAANSH_DUBEY_RESUME.pdf" target="_blank" download>
               <Button
                 size="sm"
-                className="text-xs sm:text-sm bg-blue-600 hover:bg-purple-600 text-white rounded-full px-2.5 [@media(min-width:400px)]:px-5 py-2 transition-colors duration-500"
+                className="text-xs sm:text-sm bg-blue-600 hover:bg-purple-600 text-white rounded-full px-2.5 [@media(min-width:400px)]:px-4 py-2 transition-colors duration-500"
               >
                 <Download className="h-3 w-3 sm:h-4 sm:w-4 [@media(min-width:400px)]:mr-2" />
                 <span className="hidden [@media(min-width:400px)]:inline">Resume</span>

@@ -83,7 +83,8 @@ export default function Contact() {
         transition={{ duration: 0.5 }}
       >
       
-      <AuroraText className="text-4xl font-bold mb-10">Contact Me</AuroraText>
+      <h2 className="text-4xl sm:text-4xl font-extrabold tracking-tight pb-4">
+  <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-500 to-blue-700 animate-gradient-x">Contact Me</span></h2>
     
 
         <div className="grid md:grid-cols-2 gap-10">

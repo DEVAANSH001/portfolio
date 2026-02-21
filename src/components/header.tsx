@@ -45,8 +45,8 @@ export default function Header() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
             <div className="flex items-center">
-              <Link href="/" className="text-lg bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600 font-bold">
-                Devaansh
+              <Link href="/" className="text-lg font-bold">
+                Devaansh<span className="text-2xl text-blue-500">.</span>
               </Link>
             </div>
             <div className="w-10 h-10"></div> {/* Placeholder for theme toggle */}
@@ -65,9 +65,9 @@ export default function Header() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
-            <Link href="/" className="text-lg bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600 font-bold">
-              Devaansh
-            </Link>
+            <Link href="/" className="text-lg font-bold">
+                Devaansh<span className="text-2xl text-blue-500">.</span>
+              </Link>
           </div>
 
           {/* add all links  */}

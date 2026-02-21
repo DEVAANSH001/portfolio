@@ -94,9 +94,11 @@ export default function Experience() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <AuroraText className="text-4xl font-bold text-left">
-            Professional Journey
-          </AuroraText>
+          <h2 className="text-4xl sm:text-4xl font-extrabold tracking-tight">
+  <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-500 to-blue-700 animate-gradient-x">
+    Professional Journey
+  </span>
+</h2>
         </motion.div>
 
         <div className="max-w-4xl mx-auto relative" ref={containerRef}>
