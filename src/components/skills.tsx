@@ -100,7 +100,7 @@ export default function SkillsSection() {
           className="max-w-6xl mx-auto"
         >
         <h2 className="text-4xl sm:text-4xl font-extrabold tracking-tight">
-  <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-500 to-blue-700 animate-gradient-x">
+  <span className="text-blue-600 dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-r dark:from-blue-200 dark:to-blue-600">
             Skills & Technologies
             </span>
             </h2>
