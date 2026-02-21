@@ -38,7 +38,7 @@ export default function Hero() {
             <div className="pb-0.6">
             <CanvasText
           text="Devaansh Dubey"
-          className="text-4xl sm:text-6xl font-bold"
+          className="text-3xl sm:text-6xl font-bold"
           backgroundClassName="bg-blue-600 dark:bg-blue-700"
           colors={[
             "rgba(0, 153, 255, 1)",
