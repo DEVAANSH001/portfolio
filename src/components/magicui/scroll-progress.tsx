@@ -15,9 +15,9 @@ export const ScrollProgress = React.forwardRef<
 
  
   const scaleX = useSpring(scrollYProgress, {
-    stiffness: 120,
+    stiffness: 100,
     damping: 30,
-    restDelta: 0.001,
+    restDelta: 0.005,
   });
 
   return (

@@ -9,16 +9,23 @@ const EXPERIENCE = [
     role: "Backend Developer Intern",
     company: "Raahi",
     period: "July 2025 – August 2025",
-    description:
-      "Built a full-stack ride-sharing platform serving 500+ active users using Next.js, Firebase, and TailwindCSS. Implemented secure Firebase authentication with OTP verification, restricting access to verified college email IDs. Developed core backend features including ride matching, fare calculation, booking confirmations, and real-time chat between riders and drivers. Integrated Google Maps API for live route visualization and location tracking.",
+    bullets: [
+      "Built a full-stack ride-sharing platform serving 500+ active users with Next.js, Firebase & TailwindCSS.",
+      "Implemented Firebase auth with OTP verification restricted to verified college email IDs.",
+      "Developed ride matching, fare calculation, booking confirmations & real-time rider–driver chat.",
+      "Integrated Google Maps API for live route visualization and location tracking.",
+    ],
     skills: ["Next.js", "Firebase", "Realtime Chat", "Google Maps"],
   },
   {
     role: "Backend Developer Intern",
     company: "Zonomo",
     period: "May 2025 – July 2025",
-    description:
-      "Developed backend features for a customer service booking platform, enabling appointment scheduling and management. Implemented a real-time bargaining system allowing dynamic price negotiations between customers and service providers. Built real-time chat functionality to support seamless communication and booking coordination.",
+    bullets: [
+      "Developed backend for a service booking platform with appointment scheduling & management.",
+      "Built a real-time bargaining system for dynamic price negotiations between customers & providers.",
+      "Implemented real-time chat for seamless booking coordination and communication.",
+    ],
     skills: ["Node.js", "Backend Systems", "Real-time Communication", "Scheduling Systems", "Negotiation Logic"],
   },
 ];
@@ -37,9 +44,14 @@ function ExperienceCard({ experience }: { experience: (typeof EXPERIENCE)[0] }) 
         <span className="font-medium text-blue-500">{experience.company}</span>
         <span className="text-sm text-muted-foreground">• {experience.period}</span>
       </div>
-      <p className="mb-4 text-muted-foreground max-w-2xl text-pretty leading-relaxed">
-        {experience.description}
-      </p>
+      <ul className="mb-4 space-y-1 text-muted-foreground max-w-2xl">
+        {experience.bullets.map((point, i) => (
+          <li key={i} className="flex items-start gap-2 leading-relaxed">
+            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500" />
+            {point}
+          </li>
+        ))}
+      </ul>
       <div className="flex flex-wrap gap-2">
         {experience.skills.map((skill) => (
           <span
@@ -63,9 +75,9 @@ export default function Experience() {
   });
 
   const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 150,
-    damping: 25,
-    restDelta: 0.001,
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.005,
   });
 
   const positionY = useTransform(smoothProgress, (value) => `${value * 100}%`);

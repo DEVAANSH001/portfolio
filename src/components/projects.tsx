@@ -164,13 +164,11 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.4 }}
-            className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary/70 via-blue-500 to-blue-800"
+            className="text-4xl sm:text-4xl font-extrabold tracking-tight"
           >
-             <h2 className="text-4xl sm:text-4xl font-extrabold tracking-tight">
-  <span className="text-blue-600 dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-r dark:from-blue-200 dark:to-blue-600">
-            Recent Projects
+            <span className="text-blue-600 dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-r dark:from-blue-200 dark:to-blue-600">
+              Recent Projects
             </span>
-            </h2>
           </motion.h2>
         </div>
 
@@ -179,10 +177,10 @@ export default function Projects() {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.4, delay: Math.min(index * 0.08, 0.25) }}
               className="grid md:grid-cols-2 gap-6 border rounded-xl overflow-hidden group"
             >
               <div className="overflow-hidden relative h-[300px] md:h-full border-b md:border-b-0 md:border-r">
@@ -192,6 +190,8 @@ export default function Projects() {
                     alt={project.title}
                     width={800}
                     height={1200}
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    loading="lazy"
                     className="w-full object-contain transition-transform duration-300 group-hover:scale-101"
                   />
                 </div>

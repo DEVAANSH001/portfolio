@@ -39,20 +39,19 @@ const containerVariants: Variants = {
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.05, 
+      staggerChildren: 0.04,
     },
   },
 };
 
 const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 16 },
   show: {
     opacity: 1,
     y: 0,
     transition: {
-      type: "spring",
-      stiffness: 50,
-      damping: 10,
+      duration: 0.35,
+      ease: "easeOut",
     },
   },
 };
@@ -65,9 +64,9 @@ const SkillCard = React.memo(({ skill }: { skill: typeof SKILLS[0] }) => {
     <motion.div
       variants={cardVariants}
       whileHover={{
-        scale: 1.05,
-        y: -5,
-        transition: { duration: 0.2, ease: "easeOut" } 
+        scale: 1.04,
+        y: -4,
+        transition: { duration: 0.15, ease: "easeOut" }
       }}
       className="group relative flex flex-col items-center p-6 bg-accent/5 rounded-xl border border-transparent hover:border-primary/20 hover:bg-accent/10 transition-colors cursor-default"
     >
