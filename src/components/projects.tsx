@@ -15,7 +15,7 @@ const projects = [
   title: "InView AI",
   description:
     "A voice-based AI interview platform where users upload their resume and participate in mock interviews powered by Vapi AI.",
-  image: "/inview.ai.png",
+  image: "/localhost_3000_.png",
   tags: ["Next.js", "React", "Tailwind CSS", "Firebase", "Vercel", "Vapi AI"],
   demoUrl: "https://inview-ai.vercel.app/", 
   githubUrl: "https://github.com/DEVAANSH001/inview_ai", 
