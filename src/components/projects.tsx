@@ -11,7 +11,7 @@ import { AuroraText } from "@/components/magicui/aurora-text";
 
 const projects = [
   {
-  logo: "/inview.ai.png",
+  logo: "/localhost_3000_.png",
   title: "InView AI",
   description:
     "A voice-based AI interview platform where users upload their resume and participate in mock interviews powered by Vapi AI.",
