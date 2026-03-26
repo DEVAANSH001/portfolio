@@ -29,11 +29,11 @@ const projects = [
   ],
 },
  {
-    logo: "/agent-flow.png",
+    logo: "/agentFlow.png",
     title: "AgentFlow",
     description:
   "Agentify is a AI agent builder platform that lets users visually design, run, and manage intelligent AI workflows using a drag-and-drop interface. Built with Next.js, Convex, and modern AI SDKs, it supports authentication, real-time data, security, and subscription-based monetization.",
-    image: "/agent-flow.png",
+    image: "/agentFlow.png",
     tags: [
   "Next.js",
   "React flow",
