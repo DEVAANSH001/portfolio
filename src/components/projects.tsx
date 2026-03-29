@@ -10,6 +10,25 @@ import { BsArrowRight } from "react-icons/bs";
 import { AuroraText } from "@/components/magicui/aurora-text";
 
 const projects = [
+
+  {
+  logo: "/renewly.png",
+title: "Renewly",
+description:
+  "A full-stack subscription tracker and renewal reminder service with automated email alerts, JWT auth, and scheduled job queues — built for developers who never want to miss a billing cycle.",
+image: "/renewly.png",
+tags: ["Node.js", "Express", "MongoDB", "Upstash QStash", "Arcjet", "Resend", "JWT"],
+demoUrl: "https://renewly.devaansh.me",
+githubUrl: "https://github.com/DEVAANSH001/Renewly-API",
+features: [
+  "JWT-based user auth with signup, login, and protected routes",
+  "Full subscription CRUD — create, read, update, delete with Mongoose models",
+  "Automated renewal reminders scheduled via Upstash QStash job queues",
+  "Transactional email alerts sent through Resend before every renewal date",
+  "Rate limiting (100 req/min) and bot protection via Arcjet middleware",
+  "Redis caching delivering sub-100ms API response times",
+],
+},
   {
   logo: "/localhost_3000_.png",
   title: "InView AI",
@@ -111,25 +130,6 @@ const projects = [
 ]
   },
  
-  
-  
-{
-  logo: "/heart2.png",
-  title: "Heart Disease Prediction",
-  description:
-    "A machine learning-based web app to predict heart disease using multiple models, visual comparison, and final deployment with Random Forest.",
-  image: "/heart2.png",
-  tags: ["Python", "Streamlit", "Scikit-learn", "Matplotlib", "Pandas"],
-  demoUrl: "https://devaansh001-heart-disease-p-heart-disease-prediction-app-iqot7p.streamlit.app/",
-  githubUrl: "https://github.com/DEVAANSH001/heart_disease_prediction-model", 
-  features: [
-    "Model comparison: KNN, SVM, Naive Bayes, Decision Tree, Linear & Random Forest",
-    "Evaluation metrics: R², specificity, accuracy, F1 score",
-    "Final model (Random Forest) deployed with 95% accuracy",
-    "Interactive UI using Streamlit",
-    "Visualization of model performance and predictions",
-  ],
-}
  
 ];
 export default function Projects() {
