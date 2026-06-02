@@ -92,7 +92,7 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-wrap gap-2 sm:gap-3 mb-8 sm:mb-0">
-            <Link href="https://drive.google.com/file/d/1os-O2_SAJbTF9juV8MiK3hfwFzQvn1N3/view?usp=sharing" target="_blank" download>
+            <Link href="https://drive.google.com/file/d/1KTTuV9C3oXQw3v9tjhGEmSU_dx56UXIN/view?usp=sharing" target="_blank" download>
               <Button
                 size="sm"
                 className="text-xs sm:text-sm bg-blue-600 hover:bg-purple-600 text-white rounded-full px-2.5 [@media(min-width:400px)]:px-4 py-2 transition-colors duration-500"
